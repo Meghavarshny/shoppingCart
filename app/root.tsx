@@ -15,7 +15,7 @@ import { ThemeProvider, useTheme } from "./contexts/theme-context";
 
 function RootContent({ children }: { children: React.ReactNode }) {
   const { darkMode } = useTheme();
-  
+
   return (
     <html lang="en" className={darkMode ? "dark" : ""}>
       <head>
@@ -42,6 +42,33 @@ export function Layout({ children }: { children: React.ReactNode }) {
       <RootContent children={children} />
     </ThemeProvider>
   );
+}
+
+// Add HydrateFallback for SPA mode
+export function HydrateFallback() {
+  return (
+    <html lang="en">
+      <head>
+        <meta charSet="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Shopping Cart</title>
+        <meta name="description" content="A ReactJS shopping cart application" />
+      </head>
+      <body className="bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-200">
+        <div className="flex items-center justify-center min-h-screen">
+          <div className="text-center">
+            <div className="inline-block animate-spin rounded-full h-8 w-8 border-t-2 border-b-2 border-blue-500 mb-4"></div>
+            <p className="text-lg">Loading...</p>
+          </div>
+        </div>
+      </body>
+    </html>
+  );
+}
+
+// Add a simple loader for SPA mode
+export function loader() {
+  return { message: "Welcome to the Shopping Cart" };
 }
 
 export const links: Route.LinksFunction = () => [

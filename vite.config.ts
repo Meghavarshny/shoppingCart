@@ -5,4 +5,20 @@ import tsconfigPaths from "vite-tsconfig-paths";
 
 export default defineConfig({
   plugins: [tailwindcss(), reactRouter(), tsconfigPaths()],
+  build: {
+    outDir: "dist", // Changed to match Netlify's default expectation
+    assetsDir: "assets",
+    rollupOptions: {
+      output: {
+        manualChunks: undefined,
+      },
+    },
+  },
+  server: {
+    port: 5173,
+  },
+  // Add base configuration for Netlify deployment
+  base: "./",
+  // Optimize for static hosting
+  appType: "custom",
 });
