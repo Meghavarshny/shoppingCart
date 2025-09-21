@@ -21,4 +21,8 @@ export default defineConfig({
   base: "./",
   // Optimize for static hosting
   appType: "custom",
+  // Fix for optimization issues
+  optimizeDeps: {
+    exclude: ["app/routes/home.tsx", "app/routes/cart.tsx"]
+  }
 });

@@ -113,21 +113,14 @@ docker run -p 3000:3000 shopping-cart
 ## Application Structure
 
 ```
-app/
-├── components/
-│   ├── cart-icon.tsx       # Shopping cart icon with item count
-│   └── navigation.tsx      # Navigation bar component
-├── contexts/
-│   ├── cart-context.tsx    # Shopping cart state management
-│   └── theme-context.tsx   # Theme context (dark/light mode)
-├── routes/
-│   ├── +types/             # Route type definitions
-│   ├── cart.tsx            # Shopping cart page
-│   ├── checkout.tsx        # Checkout page
-│   └── home.tsx            # Home/Products page
-├── root.tsx                # Root layout component
-├── routes.ts               # Route configuration
-└── app.css                 # Global styles
+│   ├── components/           # Reusable UI components
+│   │   ├── cart-icon.tsx    # Cart icon with item count
+│   │   └── navigation.tsx   # Main navigation bar
+│   ├── contexts/            # React context providers
+│   │   └── cart-context.tsx # Shopping cart state management
+│   └── routes/              # Page routes
+│       ├── cart.tsx         # Shopping cart page
+│       └── home.tsx         # Home page with products
 ```
 
 ## Functionality
@@ -150,12 +143,6 @@ app/
 - Real-time updates to all calculations
 - Cart persistence using localStorage
 
-### Checkout
-
-- Simple checkout form for billing and payment information
-- Order summary with all cart items
-- Order confirmation page
-
 ## Technologies Used
 
 - ReactJS
@@ -172,3 +159,7 @@ This project uses [Tailwind CSS](https://tailwindcss.com/) for styling. The resp
 ## License
 
 MIT
+
+
+
+Everything works fine. Is there a need for the scripts folder. Also why is there a build folder and a dist folder. I will be deploying in netlify. So check if both are required and if not, then remove the extra. Also check if there is a need for .env.netlify and netlify.toml. If not needed, then remove. Before removing analyze its content as well. Update the README.md file as well. Remove unnecessary code and files from the app folder
