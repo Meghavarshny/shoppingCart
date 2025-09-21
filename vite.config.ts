@@ -13,6 +13,7 @@ export default defineConfig({
         manualChunks: undefined,
       },
     },
+    assetsInlineLimit: 0, // Prevent inlining assets which might affect MIME types
   },
   server: {
     port: 5173,
