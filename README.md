@@ -159,7 +159,3 @@ This project uses [Tailwind CSS](https://tailwindcss.com/) for styling. The resp
 ## License
 
 MIT
-
-
-
-Everything works fine. Is there a need for the scripts folder. Also why is there a build folder and a dist folder. I will be deploying in netlify. So check if both are required and if not, then remove the extra. Also check if there is a need for .env.netlify and netlify.toml. If not needed, then remove. Before removing analyze its content as well. Update the README.md file as well. Remove unnecessary code and files from the app folder

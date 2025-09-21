@@ -3,14 +3,11 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "react-router build && npm run postbuild",
+    "build": "react-router build",
     "dev": "react-router dev",
     "start": "react-router-serve ./build/server/index.js",
     "preview": "vite preview",
-    "typecheck": "react-router typegen && tsc",
-    "build:netlify": "react-router build && npm run postbuild",
-    "postbuild": "npm run copy-files",
-    "copy-files": "node scripts/copy-build-files.js"
+    "typecheck": "react-router typegen && tsc"
   },
   "dependencies": {
     "@react-router/node": "^7.7.1",
