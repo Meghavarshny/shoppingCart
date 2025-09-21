@@ -6,7 +6,7 @@ import tsconfigPaths from "vite-tsconfig-paths";
 export default defineConfig({
   plugins: [tailwindcss(), reactRouter(), tsconfigPaths()],
   build: {
-    outDir: "dist", // Changed to match Netlify's default expectation
+    outDir: "build/client",
     assetsDir: "assets",
     rollupOptions: {
       output: {
@@ -18,11 +18,5 @@ export default defineConfig({
     port: 5173,
   },
   // Add base configuration for Netlify deployment
-  base: "./",
-  // Optimize for static hosting
-  appType: "custom",
-  // Fix for optimization issues
-  optimizeDeps: {
-    exclude: ["app/routes/home.tsx", "app/routes/cart.tsx"]
-  }
+  base: "/",
 });

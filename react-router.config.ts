@@ -3,5 +3,5 @@ import type { Config } from "@react-router/dev/config";
 export default {
   // Config options...
   // Server-side render by default, to enable SPA mode set this to `false`
-  ssr: true, // Changed to true for traditional React Router setup
+  ssr: false, // Changed to false for SPA mode
 } satisfies Config;
